@@ -1,0 +1,26 @@
+<div class='geocoder'>
+  <form>
+  <input class='address' type='text'>
+  <input type ='submit' > 
+  </form>
+
+</div>
+<ol class='results' >  
+  <% @geocodes.each do |geo| %>
+    <li> <%= geo.address %> :  <%=  geo.lat %>, <%= geo.long %>  </li>
+
+  <% end %> 
+</ol>
+<script>
+  $(document).ready(function() {
+    $('.geocoder > form').on('submit', function(e) {
+      e.preventDefault();
+
+      $.post('/geocodes', {
+        address: $('.geocoder').find('.address').val()
+      }, function (ret) {
+        $('.results').append('<li>' + ret.address + ':' + ret.lat + ',' + ret.long + '</li>')   
+      })
+    })
+  })
+</script>
