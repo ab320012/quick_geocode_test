@@ -1,24 +1,8 @@
-# README
+##Specs
+db: SQLlite, 
+ruby -v 2.4.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Additional Comments
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+please add your api key to ~/config/initializers/geo.rb or into an environment
+variable GOOGLE_API_KEY 
